@@ -9,7 +9,6 @@ import TodoList from "../todo-list/TodoList";
 import { AnimatePresence, motion } from "framer-motion";
 
 const BoardItem = styled.li`
-  position: relative;
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.2em;
@@ -43,13 +42,15 @@ const OnDeleteBtn = styled.button`
 
 const Overlay = styled(motion.div)`
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 1);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
   position: fixed;
   top: 0;
   left: 0;
+  margin: auto;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -80,7 +81,7 @@ const BigTodoList = styled(motion.div)`
 
 type showing = boolean;
 
-const Board = ({ board, id }: IBoardState) => {
+const Board = (board: IBoardState) => {
   const setBoard = useSetRecoilState(boardState);
   const [showTodoList, setShowTodoList] = useState<showing>(false);
 
@@ -99,20 +100,20 @@ const Board = ({ board, id }: IBoardState) => {
     <>
       <BoardItem>
         <motion.button onClick={onShowTodo}>
-          <BoardText>{board}</BoardText>
+          <BoardText>{board.board}</BoardText>
         </motion.button>
-        <OnDeleteBtn onClick={() => onDelete(id)}>
+        <OnDeleteBtn onClick={() => onDelete(board.id)}>
           <FontAwesomeIcon icon={faBackspace} />
         </OnDeleteBtn>
         <AnimatePresence>
           {showTodoList ? (
             <Overlay
-              layoutId={id + ""}
+              layoutId={board.id + ""}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <TodoList board={board} id={id} showing={true} />
+              <TodoList {...board} showing={true} />
               <CloseBtn onClick={onShowTodo}>
                 <FontAwesomeIcon icon={faTimesCircle} />
               </CloseBtn>
@@ -121,7 +122,7 @@ const Board = ({ board, id }: IBoardState) => {
         </AnimatePresence>
       </BoardItem>
       <Line></Line>
-      <BigTodoList layoutId={id + ""}></BigTodoList>
+      <BigTodoList layoutId={board.id + ""}></BigTodoList>
     </>
   );
 };

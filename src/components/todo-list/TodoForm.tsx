@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useSetRecoilState, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { IBoardState, todoState } from "../../atoms";
 
@@ -21,6 +21,9 @@ const Input = styled.input`
   outline: 0;
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.2);
+  }
 `;
 
 const AddBtn = styled.button`

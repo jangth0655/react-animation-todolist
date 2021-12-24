@@ -10,7 +10,9 @@ const TodoLi = styled.li`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5em;
+  width: fit-content;
   h1 {
+    word-spacing: normal;
     padding: 1em;
     cursor: pointer;
     font-size: 1.2rem;
@@ -41,8 +43,8 @@ const Complete = styled.div`
 `;
 
 const Input = styled.input`
-  height: 1.4em;
-  width: 1.4em;
+  height: 2.5em;
+  width: 2.5em;
   background: black;
   margin-right: 1em;
   cursor: pointer;

@@ -51,9 +51,7 @@ html {
 body {
 	font-family: 'Open Sans', sans-serif;
 	line-height: 1;	
-	display: flex;
-	align-items: center;
-	justify-content: center;
+
 	height: 100%;
 }
 ol, ul {
@@ -78,6 +76,8 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
 `;
 
 ReactDOM.render(

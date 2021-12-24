@@ -5,11 +5,13 @@ import BoardList from "./components/board-list/BoardList";
 
 const Main = styled.main`
   padding: 2em;
+  position: relative;
+  top: 6em;
   height: 31em;
-  width: 45em;
-  background-color: white;
+  width: 36em;
   margin: auto;
   border-radius: 10px;
+  background-color: white;
   -webkit-box-shadow: 1px 6px 12px -1px #000000;
   box-shadow: 1px 6px 12px -1px #000000;
   @media only screen and (max-width: 40em) {
