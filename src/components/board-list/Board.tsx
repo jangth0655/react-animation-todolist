@@ -13,12 +13,15 @@ const BoardItem = styled.li`
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.2em;
-  h1 {
-    cursor: pointer;
-    font-size: 1.2rem;
-    & :hover {
-      color: red;
-    }
+`;
+
+const BoardText = styled.h1`
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s ease-in;
+  &:hover {
+    transform: scale(1.1);
+    color: ${(props) => props.theme.activeColor};
   }
 `;
 
@@ -55,18 +58,12 @@ const Overlay = styled(motion.div)`
 const CloseBtn = styled(motion.div)`
   cursor: pointer;
   z-index: -1;
-  padding: 1em;
-  position: fixed;
-  top: 1em;
-  font-size: 4rem;
+  padding: 0.5em;
+  font-size: 1.7rem;
   color: ${(props) => props.theme.dark};
   transition: all 1s ease-in-out;
   & :hover {
     color: white;
-  }
-  @media only screen and (max-height: 45em) {
-    right: -0.5em;
-    font-size: 2rem;
   }
 `;
 
@@ -101,9 +98,9 @@ const Board = ({ board, id }: IBoardState) => {
   return (
     <>
       <BoardItem>
-        <button onClick={onShowTodo}>
-          <h1>{board}</h1>
-        </button>
+        <motion.button onClick={onShowTodo}>
+          <BoardText>{board}</BoardText>
+        </motion.button>
         <OnDeleteBtn onClick={() => onDelete(id)}>
           <FontAwesomeIcon icon={faBackspace} />
         </OnDeleteBtn>

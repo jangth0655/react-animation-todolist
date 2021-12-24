@@ -12,7 +12,7 @@ const Main = styled.main`
   border-radius: 10px;
   -webkit-box-shadow: 1px 6px 12px -1px #000000;
   box-shadow: 1px 6px 12px -1px #000000;
-  @media only screen and (max-width: 43em) {
+  @media only screen and (max-width: 40em) {
     font-size: 0.6rem;
   }
 `;
