@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 
 const TodoLi = styled.li`
+  padding: 1em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,9 +44,8 @@ const Complete = styled.div`
 `;
 
 const Input = styled.input`
-  height: 2.5em;
-  width: 2.5em;
-  background: black;
+  height: 3em;
+  width: 3em;
   margin-right: 1em;
   cursor: pointer;
 `;

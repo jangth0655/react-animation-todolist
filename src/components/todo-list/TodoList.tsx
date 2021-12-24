@@ -8,9 +8,9 @@ import TodoForm from "./TodoForm";
 const TodoSection = styled.div`
   overflow-y: scroll;
   position: relative;
-  top: 0px;
   padding: 2em;
   width: 25em;
+  height: 25em;
   border-radius: 15px;
   background-color: white;
 `;
