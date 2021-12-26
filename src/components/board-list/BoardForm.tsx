@@ -9,7 +9,7 @@ export interface IBoard {
   board: string;
 }
 
-const CATEGORIES = "board";
+export const CATEGORIES = "board";
 
 const BoardForm = styled.form`
   padding: 0.5em;

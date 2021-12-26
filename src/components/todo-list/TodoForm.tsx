@@ -9,7 +9,7 @@ export interface ITodo {
   todo: string;
 }
 
-const TODOS_KEY = "todos";
+export const TODOS_KEY = "todos";
 
 const Form = styled.form`
   padding: 0.5em;

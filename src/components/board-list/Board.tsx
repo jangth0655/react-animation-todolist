@@ -7,6 +7,8 @@ import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import TodoList from "../todo-list/TodoList";
 import { AnimatePresence, motion } from "framer-motion";
+import { removeItem, setItems } from "../../App";
+import { CATEGORIES } from "./BoardForm";
 
 const BoardItem = styled.li`
   display: flex;
@@ -92,6 +94,7 @@ const Board = (board: IBoardState) => {
   const onDelete = (id: number) => {
     setBoard((oldBoard) => {
       const newBoard = oldBoard.filter((board) => board.id !== id);
+      setItems(CATEGORIES, JSON.stringify(newBoard));
       return newBoard;
     });
   };

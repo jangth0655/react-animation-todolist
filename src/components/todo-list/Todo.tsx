@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { ITodos, todoState } from "../../atoms";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackspace } from "@fortawesome/free-solid-svg-icons";
+import { setItems } from "../../App";
+import { TODOS_KEY } from "./TodoForm";
 
 const TodoLi = styled.li`
   padding: 1em 0;
@@ -67,6 +69,7 @@ const ToDo = (todo: ITodos) => {
   const onDelete = (id: number) => {
     setTodo((oldTodo) => {
       const newTodo = oldTodo.filter((todo) => todo.id !== id);
+      setItems(TODOS_KEY, JSON.stringify(newTodo));
       return newTodo;
     });
   };
