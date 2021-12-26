@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import styled from "styled-components";
-import { ITodo, todoState } from "../../atoms";
+import { ITodos, todoState } from "../../atoms";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 
@@ -61,7 +61,7 @@ const DeleteBtn = styled.button`
   }
 `;
 
-const ToDo = (todo: ITodo) => {
+const ToDo = (todo: ITodos) => {
   const [complete, setComplete] = useState(false);
   const setTodo = useSetRecoilState(todoState);
   const onDelete = (id: number) => {

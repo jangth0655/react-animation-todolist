@@ -2,11 +2,14 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import styled from "styled-components";
-import { boardState } from "../../atoms";
+import { getItem, setItems } from "../../App";
+import { boardState, IBoardState } from "../../atoms";
 
 export interface IBoard {
   board: string;
 }
+
+const CATEGORIES = "board";
 
 const BoardForm = styled.form`
   padding: 0.5em;
@@ -75,12 +78,25 @@ const BoardCreateForm = () => {
   const { register, handleSubmit, setValue, setFocus } = useForm();
   const onSubmit = ({ board }: IBoard) => {
     setValue("board", "");
-    setBoard((prev) => [...prev, { board, id: Date.now(), showing: false }]);
+    setBoard((prev) => {
+      const newBoards = [...prev, { board, id: Date.now(), showing: false }];
+      setItems(CATEGORIES, JSON.stringify(newBoards));
+      return newBoards;
+    });
   };
 
   useEffect(() => {
+    const loadedItems = getItem(CATEGORIES);
+    if (loadedItems !== null) {
+      const parsedBoards: IBoardState[] = JSON.parse(loadedItems);
+      parsedBoards.forEach((board) => {
+        setBoard((prev) => {
+          return [...prev, board];
+        });
+      });
+    }
     setFocus("board");
-  }, [setFocus]);
+  }, [setFocus, setBoard]);
 
   return (
     <>

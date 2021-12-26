@@ -33,7 +33,9 @@ function TodoList(board: IBoardState) {
         <TodoForm {...board} />
         <Todolist>
           {toDos.map((todo) =>
-            board.id === todo.boardId ? <ToDo key={todo.id} {...todo} /> : null
+            board.id === todo.boardId ? (
+              <ToDo key={todo.todo} {...todo} />
+            ) : null
           )}
         </Todolist>
       </TodoSection>

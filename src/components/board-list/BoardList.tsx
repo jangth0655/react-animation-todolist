@@ -15,7 +15,7 @@ const BoardList = () => {
   return (
     <Boardlist>
       {boardList.map((board) => (
-        <Board key={board.id} {...board} />
+        <Board key={board.board} {...board} />
       ))}
     </Boardlist>
   );

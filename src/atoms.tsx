@@ -5,7 +5,7 @@ export interface IBoardState {
   id: number;
   showing: boolean;
 }
-export interface ITodo {
+export interface ITodos {
   todo: string;
   id: number;
   boardId: number;
@@ -16,13 +16,7 @@ export const boardState = atom<IBoardState[]>({
   default: [],
 });
 
-export const todoState = atom<ITodo[]>({
+export const todoState = atom<ITodos[]>({
   key: "todo",
   default: [],
 });
-
-/* export const showingToDo = atom<IShowTodoList>({
-  key: "showing",
-  default: false,
-});
- */
