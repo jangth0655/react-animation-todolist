@@ -1,14 +1,14 @@
 > Project Name : **TodoList**
 
-####Planning :
+Planning :
 
 - 기간 : 3일
 
-####Purpose :
+Purpose :
 
 - 개인적인 간단한 계획 등 따위를 카테고리별 todo를 작성하기 위해 만들었습니다.
 
-####Library :
+Library :
 
 - react-recoil
 - react - useForm
@@ -16,7 +16,7 @@
 
 ---
 
-####Specific :
+Specific :
 1 Must have
 
 - 카테고리 생성 및 삭제
