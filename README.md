@@ -30,4 +30,10 @@ Specific :
 
 ---
 
+|Feature|Description|
+|--|--|
+|Category|<img src="https://user-images.githubusercontent.com/83333409/148671608-da45c586-ec56-4555-b34b-91bed6ba6757.png" width='800'>
+|Todo List|<img src="https://user-images.githubusercontent.com/83333409/148671612-6d6e062c-ec70-45fc-9271-afba69f63c10.png" width='800'>
+
+---
 Click [Link](https://jangth0655.github.io/react-todo-list-v2)
